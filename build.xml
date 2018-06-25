@@ -27,7 +27,7 @@
       </target>
       <target name="test">
           <echo message="Confirm by printing contents of ExecutionConfig.xml ..."/> 
-          <loadfile property="executionConfig" srcFile="ExecutionConfig.xml"/> 
+          <loadfile property="executionConfig" srcFile="./toscaCI-test/ExecutionConfig.xml"/> 
           <echo>${executionConfig}</echo> 
       </target>
       <!-- END -->
