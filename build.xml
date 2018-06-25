@@ -3,7 +3,7 @@
   <property file="build.properties"/>
   
     <!-- AVAILABLE COMMANDS -->
-    <target name="full-suite" depends="date, list, info, replace" />
+    <target name="full-suite" depends="date, list, replace" />
       <!-- DATE -->
       <target name="date">
           <echo message="Build.xml Github/ant-jenkins-test"/>
