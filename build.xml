@@ -3,7 +3,7 @@
   <property file="build.properties"/>
   
     <!-- AVAILABLE COMMANDS -->
-    <target name="full-suite" depends="date, list, replace" />
+    <target name="full-suite" depends="date, list, replace, test" />
       <!-- DATE -->
       <target name="date">
           <echo message="Build.xml Github/ant-jenkins-test"/>
@@ -24,6 +24,11 @@
           <echo message="Replacing parameters in Tosca files ..."/> 
           <replace file="./toscaCI-test/ExecutionConfig.xml" token="SURROGATE_ID" value="${surrogateId}"/>
           <replace file="./toscaCI-test/config.properties" token="HOST_ADDRESS" value="${hostAddress}"/>
+      </target>
+      <target name="test">
+          <echo message="Confirm by printing contents of ExecutionConfig.xml ..."/> 
+          <loadfile property="executionConfig" srcFile="ExecutionConfig.xml"/> 
+          <echo>${executionConfig}</echo> 
       </target>
       <!-- END -->
   
