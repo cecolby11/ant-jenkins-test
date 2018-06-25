@@ -1,12 +1,9 @@
 <?xml version = "1.0"?>
 <project name = "learn-ant project" default = "full-suite" basedir=".">
   <property file="build.properties"/>
-   <target name = "info">
-      <echo>Welcome to Apache Ant! Environment: ${environment}</echo>
-         <replace file="./test.txt" token="REPLACE" value="love"/>
-     <!-- AVAILABLE COMMANDS -->
-   </target>
-    <target name="full-suite" depends="date, list, info" />
+  
+    <!-- AVAILABLE COMMANDS -->
+    <target name="full-suite" depends="date, list, info, replace" />
       <!-- DATE -->
       <target name="date">
           <echo message="Build.xml Github/ant-jenkins-test"/>
@@ -22,4 +19,12 @@
           </exec>
       </target>
       <!-- END -->
+      <!-- REPLACE PARAMETERS IN TOSCA FILES -->
+     <target name = "replace">
+          <echo message="Replacing parameters in Tosca files ..."/> 
+          <replace file="./toscaCI-test/ExecutionConfig.xml" token="SURROGATE_ID" value="${surrogateId}"/>
+          <replace file="./toscaCI-test/config.properties" token="HOST_ADDRESS" value="${hostAddress}"/>
+      </target>
+      <!-- END -->
+  
 </project>
