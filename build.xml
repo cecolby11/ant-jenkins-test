@@ -16,9 +16,9 @@
       <!-- END -->
       <!-- LIST -->
       <target name="list">
-          <echo message="Listing source folder ..."/>
+          <echo message="Listing toscaCI files ..."/>
           <exec executable="ls">
-              <arg line="-l ." />
+              <arg line="-l ./toscaCI-test" />
           </exec>
       </target>
       <!-- END -->
